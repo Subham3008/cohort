@@ -1,0 +1,32 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+@mixin line-style($color: rgba(205, 205, 205, 0.5), $height: 3.5px) {
+  width: 100%;
+  height: $height;
+  background-color: $color;
+}
+
+@mixin button-style($color: rgb(2, 95, 201)) {
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  color: $color;
+  background: transparent;
+  border: 1px solid $color;
+}

@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/Lumiare.otf");
+}
+@font-face {
+  font-family: "lumi";
+  src: url("./fonts/Lumiare.otf");
+}
+
+@font-face {
+  font-family: "comic";
+  src: url("./fonts/Hallow\ Zombies\ Demo.otf");
+}
+@font-face {
+  font-family: "day";
+  src: url("./fonts/28\ Days\ Later.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "day";
+  background: linear-gradient(135deg, #61e8b6 0%, #4692da 100%);
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  font-family: "day";
+  padding: 10px 70px;
+
+  background-color: rgba(255, 255, 255, 0.2); /* white with transparency */
+  backdrop-filter: blur(10px); /* glass effect */
+  /* margin-inline: 40px; */
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-component1 {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-component3 {
+  display: flex;
+  gap: 40px;
+}
+
+.main > h1 {
+  font-size: 320px;
+  font-family: "day";
+  font-weight: 100;
+  position: absolute;
+  top: 9%;
+  left: 10%;
+  color: rgb(26, 154, 111);
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(14, 14, 25, 0.7);
+}
+
+.btmleft {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+}
+
+.btmleft h3 {
+  font-size: 30px;
+}
+.btmleft p {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.btmleft h4 {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 30px 70px;
+}
+.bottom a {
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+}
+
+.main > img {
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  left: 40%;
+  top: 34%;
+  border-radius: 15px;
+  box-shadow: 5px 10px 14px rgba(0, 0, 0, 0.9);
+}
+
+#img1 {
+  /* left: 40%;
+  top: 50%; */
+  transform-origin: bottom center; /* bottom-left ko center banaya */
+  transform: rotate(330deg); /* 45 degree ghumaya */
+  display: inline-block;
+}
+
+#img2 {
+  /* left: 40%;
+  top: 50%; */
+  transform-origin: bottom center; /* bottom-left ko center banaya */
+  transform: rotate(0deg); /* 45 degree ghumaya */
+  display: inline-block;
+}
+
+#img3 {
+  /* left: 40%;
+  top: 50%; */
+  transform-origin: bottom center; /* bottom-left ko center banaya */
+  transform: rotate(30deg); /* 45 degree ghumaya */
+  display: inline-block;
+}

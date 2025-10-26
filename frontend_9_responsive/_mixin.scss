@@ -1,0 +1,56 @@
+@mixin flex-box($gap: 0rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin grid-class {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  
+}
+
+@mixin ele {
+  aspect-ratio: 1/1;
+  background-size: cover;
+  border-radius: 0.7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0rem;
+}
+
+@mixin top {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+
+@mixin icon {
+  background-color: rgba(187, 187, 187, 0.375);
+  backdrop-filter: blur(5px);
+  width: fit-content;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  color: #efe7de;
+}
+
+@mixin bottom {
+  background-color: rgba(187, 187, 187, 0.375);
+  backdrop-filter: blur(5px);
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin-inline: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(1rem, 1vw, 1.4rem);
+  text-transform: uppercase;
+  gap: 1rem;
+}

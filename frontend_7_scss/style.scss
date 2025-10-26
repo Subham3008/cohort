@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+
+  section {
+    height: 100%;
+    flex-grow: 1;
+    background-color: red;
+    background-size: cover;
+    background-position: center;
+    transition: all linear 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      color: #179811;
+    }
+
+    .bottom {
+      height: 30%;
+      width: 100%;
+      position: absolute;
+      background: linear-gradient(transparent, black);
+      bottom: -30%;
+      transition: all ease 0.5s;
+    }
+
+    &:hover {
+      flex-grow: 3;
+
+      .bottom {
+        bottom: 0%;
+      }
+    }
+  }
+
+  section:nth-child(1) {
+    background-image: url(./lambo.png);
+  }
+  section:nth-child(2) {
+    background-image: url(https://i.pinimg.com/736x/08/6a/b0/086ab0d9354b5d58dab2862df0f4cd7f.jpg);
+  }
+  section:nth-child(3) {
+    background-image: url(https://i.pinimg.com/736x/8c/31/f2/8c31f22cc4dd972824ab83de163a423c.jpg);
+  }
+  section:nth-child(4) {
+    background-image: url(https://i.pinimg.com/736x/12/d8/86/12d8865fe2a78a3612aff165d56a4c8a.jpg);
+  }
+  section:nth-child(5) {
+    background-image: url(https://i.pinimg.com/736x/63/b9/92/63b9928289e04eaa8a3144f919502a36.jpg);
+  }
+}
