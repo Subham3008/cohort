@@ -24,3 +24,15 @@ gsap.from("main .sec1 h1,h3", {
   opacity: 0,
   duration: 1
 })
+
+gsap.from("main .sec2 h5, main .sec2 h1, main .sec2 h4", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  stagger: 0.3,
+  scrollTrigger: {
+    trigger: ".sec2",
+    scroller: "body",
+    start: "top 80%",
+  }
+});
