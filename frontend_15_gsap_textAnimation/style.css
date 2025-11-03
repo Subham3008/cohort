@@ -20,4 +20,9 @@ main {
 }
 main h1 {
   font-size: 10vw;
+  overflow: hidden;
+  font-weight: 400;
+}
+main h1 span {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */
