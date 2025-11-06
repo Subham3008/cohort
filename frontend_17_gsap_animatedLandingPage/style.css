@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: "head";
+  src: url(./fonts/SpaceGrotesk-Medium.woff);
+}
+@font-face {
+  font-family: "body";
+  src: url(./fonts/SpaceGrotesk-Regular.woff);
+}
+main {
+  height: 100%;
+  width: 100%;
+  padding: 0rem 8rem;
+}
+main section.sec1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0rem;
+}
+main section.sec1 .left h1 {
+  font-size: 2.5vw;
+  font-family: "head";
+}
+main section.sec1 .right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+main section.sec1 .right a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3vw;
+  opacity: 0.8;
+  font-family: "head";
+}
+main section.sec1 .right button {
+  background-color: transparent;
+  font-size: 1.3vw;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  opacity: 0.8;
+}
+main section.sec1 .right button:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+main section.sec2 {
+  width: 100%;
+  display: flex;
+}
+main section.sec2 .left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section.sec2 .left h1 {
+  font-size: 3vw;
+  margin-bottom: 1rem;
+  font-family: "body";
+  width: 80%;
+}
+main section.sec2 .left p {
+  font-size: 1.2vw;
+  width: 80%;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+main section.sec2 .left button {
+  width: 50%;
+  padding: 1rem;
+  font-size: 1.5vw;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+}
+main section.sec2 .left button:hover {
+  background-color: #B9FF66;
+  color: black;
+  transition: 0.2s;
+}
+main section.sec2 .right {
+  width: 60%;
+  position: relative;
+}
+main section.sec2 .right img {
+  position: absolute;
+  right: 0;
+}
+main section .sec3 {
+  width: 100%;
+  display: flex;
+}
+main section .sec3 img {
+  display: inline-block;
+}/*# sourceMappingURL=style.css.map */
