@@ -29,6 +29,10 @@ main section.sec1 {
   align-items: center;
   justify-content: space-between;
   padding: 3rem 0rem;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
 }
 main section.sec1 .left h1 {
   font-size: 2.5vw;
@@ -60,6 +64,7 @@ main section.sec1 .right button:hover {
 main section.sec2 {
   width: 100%;
   display: flex;
+  margin-bottom: 10rem;
 }
 main section.sec2 .left {
   width: 40%;
@@ -101,10 +106,46 @@ main section.sec2 .right img {
   position: absolute;
   right: 0;
 }
-main section .sec3 {
-  width: 100%;
+main section.sec3 {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 8rem;
 }
-main section .sec3 img {
+main section.sec3 img {
   display: inline-block;
+}
+main section.sec4 {
+  width: 100%;
+}
+main section.sec4 .top {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+main section.sec4 .top h1 {
+  background-color: #B9FF66;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 2.5vw;
+}
+main section.sec4 .top p {
+  width: 40%;
+  font-size: 1.2vw;
+}
+main section.sec4 .first {
+  display: flex;
+  gap: 2rem;
+}
+main section.sec4 .first .left {
+  display: flex;
+  width: 50%;
+  background-color: #F3F3F3;
+  border-radius: 3rem;
+}
+main section.sec4 .first .right {
+  display: flex;
+  width: 50%;
+  background-color: #B9FF66;
+  border-radius: 3rem;
 }/*# sourceMappingURL=style.css.map */
