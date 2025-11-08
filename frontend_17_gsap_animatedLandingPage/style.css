@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: "head";
   src: url(./fonts/SpaceGrotesk-Medium.woff);
@@ -37,6 +41,11 @@ main section.sec1 {
 main section.sec1 .left h1 {
   font-size: 2.5vw;
   font-family: "head";
+}
+main section.sec1 .left h1 i {
+  rotate: 45deg;
+  display: inline-block;
+  font-size: larger;
 }
 main section.sec1 .right {
   display: flex;
@@ -116,6 +125,7 @@ main section.sec3 img {
 }
 main section.sec4 {
   width: 100%;
+  padding-bottom: 5rem;
 }
 main section.sec4 .top {
   display: flex;
@@ -128,24 +138,107 @@ main section.sec4 .top h1 {
   padding: 0.5rem;
   border-radius: 0.5rem;
   font-size: 2.5vw;
+  font-family: "head";
+  font-weight: 500;
 }
 main section.sec4 .top p {
   width: 40%;
-  font-size: 1.2vw;
+  font-size: 1vw;
+  font-family: "body";
 }
 main section.sec4 .first {
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 main section.sec4 .first .left {
   display: flex;
-  width: 50%;
+  width: 47%;
+  height: 16rem;
+  padding: 2rem;
   background-color: #F3F3F3;
   border-radius: 3rem;
+  box-shadow: 0px 7px 0px black;
+  position: relative;
+}
+main section.sec4 .first .left .top-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+main section.sec4 .first .left .top-left h2 {
+  background-color: #B9FF66;
+}
+main section.sec4 .first .left .top-right {
+  position: absolute;
+  right: 5rem;
 }
 main section.sec4 .first .right {
   display: flex;
-  width: 50%;
+  padding: 2rem;
+  width: 47%;
+  height: 16rem;
   background-color: #B9FF66;
   border-radius: 3rem;
+  box-shadow: 0px 7px 0px black;
+  justify-content: space-evenly;
+}
+main section.sec4 .first .right .top-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+main section.sec4 .first .right .top-left h2 {
+  background-color: #F3F3F3;
+}
+main section.sec4 .second {
+  display: flex;
+  justify-content: space-between;
+}
+main section.sec4 .second .left {
+  display: flex;
+  width: 47%;
+  height: 16rem;
+  padding: 3rem;
+  background-color: #191A23;
+  border-radius: 3rem;
+  box-shadow: 0px 7px 0px black;
+  position: relative;
+}
+main section.sec4 .second .left .top-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+main section.sec4 .second .left .top-left h2 {
+  background-color: #F3F3F3;
+}
+main section.sec4 .second .left .top-left h4 {
+  color: white;
+}
+main section.sec4 .second .left .top-right {
+  position: absolute;
+  right: 5rem;
+}
+main section.sec4 .second .right {
+  display: flex;
+  padding: 2rem;
+  width: 47%;
+  height: 16rem;
+  background-color: #F3F3F3;
+  border-radius: 3rem;
+  box-shadow: 0px 7px 0px black;
+  justify-content: space-evenly;
+}
+main section.sec4 .second .right .top-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+main section.sec4 .second .right .top-left h2 {
+  background-color: #B9FF66;
 }/*# sourceMappingURL=style.css.map */

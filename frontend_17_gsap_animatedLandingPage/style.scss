@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'head';
   src: url(./fonts/SpaceGrotesk-Medium.woff);
@@ -39,6 +43,12 @@ main {
     .left h1 {
       font-size: 2.5vw;
       font-family: 'head';
+
+      i {
+        rotate: 45deg;
+        display: inline-block;
+        font-size: larger;
+      }
     }
 
     .right {
@@ -138,6 +148,7 @@ main {
 
   section.sec4 {
     width: 100%;
+    padding-bottom: 5rem;
 
     .top {
       display: flex;
@@ -150,30 +161,142 @@ main {
         padding: 0.5rem;
         border-radius: 0.5rem;
         font-size: 2.5vw;
+        font-family: 'head';
+        font-weight: 500;
       }
 
       p {
         width: 40%;
-        font-size: 1.2vw;
+        font-size: 1vw;
+        font-family: 'body';
       }
     }
 
     .first {
       display: flex;
-      gap: 2rem;
+      justify-content: space-between;
+      margin-bottom: 2rem;
 
       .left {
         display: flex;
-        width: 50%;
+        width: 47%;
+        height: 16rem;
+        padding: 2rem;
         background-color: #F3F3F3;
         border-radius: 3rem;
+        box-shadow: 0px 7px 0px black;
+        position: relative;
+
+        .top-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          gap: 3rem;
+
+          h2 {
+            // width: 80%;
+            background-color: #B9FF66;
+          }
+        }
+
+        .top-right {
+          position: absolute;
+          right: 5rem;
+
+        }
       }
 
       .right {
         display: flex;
-        width: 50%;
+        padding: 2rem;
+        width: 47%;
+        height: 16rem;
         background-color: #B9FF66;
         border-radius: 3rem;
+        box-shadow: 0px 7px 0px black;
+        justify-content: space-evenly;
+
+
+
+
+        .top-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          gap: 3rem;
+
+          h2 {
+            // width: 80%;
+            background-color: #F3F3F3;
+
+          }
+        }
+
+      }
+    }
+
+    .second {
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        display: flex;
+        width: 47%;
+        height: 16rem;
+        padding: 3rem;
+        background-color: #191A23;
+        border-radius: 3rem;
+        box-shadow: 0px 7px 0px black;
+        position: relative;
+
+        .top-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          gap: 3rem;
+
+          h2 {
+            background-color: #F3F3F3;
+          }
+
+          h4 {
+            color: white;
+          }
+        }
+
+        .top-right {
+          position: absolute;
+          right: 5rem;
+
+        }
+      }
+
+      .right {
+        display: flex;
+        padding: 2rem;
+        width: 47%;
+        height: 16rem;
+        background-color: #F3F3F3;
+        border-radius: 3rem;
+        box-shadow: 0px 7px 0px black;
+        justify-content: space-evenly;
+
+
+
+
+        .top-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          gap: 3rem;
+
+          h2 {
+            // width: 80%;
+            background-color: #B9FF66;
+
+          }
+        }
+
       }
     }
   }
