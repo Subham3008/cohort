@@ -15,6 +15,48 @@ let highscore = localStorage.getItem('highscore') || 0;
 let score = 0;
 let time = `00:00`;
 
+//for mobile 
+// Detect swipe gestures for mobile
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+//When finger touches screen
+document.addEventListener("touchstart", function (e) {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+});
+
+// When finger leaves screen
+document.addEventListener("touchend", function (e) {
+  touchEndX = e.changedTouches[0].clientX;
+  touchEndY = e.changedTouches[0].clientY;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diffX = touchEndX - touchStartX;
+  const diffY = touchEndY - touchStartY;
+
+  // Horizontal swipe
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    if (diffX > 0 && direction !== "left") {
+      direction = "right";
+    } else if (diffX < 0 && direction !== "right") {
+      direction = "left";
+    }
+  }
+  // Vertical swipe
+  else {
+    if (diffY > 0 && direction !== "up") {
+      direction = "down";
+    } else if (diffY < 0 && direction !== "down") {
+      direction = "up";
+    }
+  }
+}
+
 highScoreElement.innerText = highscore;
 
 const cols = Math.floor(board.clientWidth / blockWidth);
