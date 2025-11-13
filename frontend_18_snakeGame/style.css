@@ -13,6 +13,8 @@ body {
 :root {
   /*background colors*/
   --bg-color: #161616;
+  --bg-snake-color: #00c116;
+  --bg-food-color: #c10000;
   /*text colors*/
   --text-color: #ebebeb;
   /* padding */
@@ -24,6 +26,8 @@ body {
   --padding-2x: 4rem;
   /*border color*/
   --border-color: #474747;
+  /*block border color*/
+  --block-color: #2c2c2c;
   /*border radius*/
   --border-radius-xs: 4px;
   --border-radius-sm: 8px;
@@ -40,6 +44,7 @@ body {
 html {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 main {
@@ -57,8 +62,8 @@ main section {
 main section .infos {
   display: flex;
   justify-content: space-between;
-  font-family: "body";
-  font-size: 1.2rem;
+  gap: var(--spacing-sm);
+  font-size: clamp(0.4rem, 2vw, 1.2rem);
 }
 main section .infos .info {
   border: 1px solid var(--border-color);
@@ -75,5 +80,55 @@ main section .board {
 main section .board .block {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--block-color);
+}
+main section .board .fill {
+  background-color: var(--bg-snake-color);
+}
+main section .board .food {
+  background-color: var(--bg-food-color);
+  border-radius: 50%;
+  animation: blink 0.8s infinite alternate;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+main .modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba(53, 53, 53, 0.5294117647);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal .start-game,
+main .modal .game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+main .modal .start-game .btn,
+main .modal .game-over .btn {
+  padding: var(--padding-xs) var(--padding-sm);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .modal .start-game .btn:hover,
+main .modal .game-over .btn:hover {
+  transform: scale(1.1);
+}
+main .modal .game-over {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

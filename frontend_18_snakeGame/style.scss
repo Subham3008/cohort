@@ -13,6 +13,8 @@ body {
 :root {
   /*background colors*/
   --bg-color: #161616;
+  --bg-snake-color: #00c116;
+  --bg-food-color: #c10000;
 
   /*text colors*/
   --text-color: #ebebeb;
@@ -27,6 +29,9 @@ body {
 
   /*border color*/
   --border-color: #474747;
+
+  /*block border color*/
+  --block-color: #2c2c2c;
 
   /*border radius*/
   --border-radius-xs: 4px;
@@ -46,6 +51,7 @@ body {
 html {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
@@ -64,8 +70,9 @@ main {
     .infos {
       display: flex;
       justify-content: space-between;
-      font-family: 'body';
-      font-size: 1.2rem;
+      gap: var(--spacing-sm);
+      font-size: clamp(0.4rem, 2vw, 1.2rem);
+
 
       .info {
         border: 1px solid var(--border-color);
@@ -84,9 +91,66 @@ main {
       .block {
         width: 40px;
         height: 40px;
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--block-color);
       }
 
+      .fill {
+        background-color: var(--bg-snake-color);
+      }
+
+      .food {
+        background-color: var(--bg-food-color);
+        border-radius: 50%;
+        animation: blink 0.8s infinite alternate;
+      }
+
+      @keyframes blink {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0.3;
+        }
+      }
+
+    }
+
+  }
+
+  .modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #35353587;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .start-game,
+    .game-over {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-sm);
+
+      .btn {
+        padding: var(--padding-xs) var(--padding-sm);
+        border: none;
+        border-radius: var(--border-radius-sm);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .game-over {
+      display: none;
     }
   }
 }
