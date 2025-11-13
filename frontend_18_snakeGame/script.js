@@ -160,7 +160,7 @@ startBtn.addEventListener('click', () => {
   modal.style.display = 'none';
   intervalId = setInterval(() => {
     render();
-  }, 300)
+  }, 400)
 
   timerIntrvalId = setInterval(() => {
     let [min, sec] = time.split(':').map(Number)
@@ -198,5 +198,5 @@ function restartGame() {
   food = { x: Math.floor(Math.random() * rows), y: Math.floor(Math.random() * cols) };
   intervalId = setInterval(() => {
     render();
-  }, 300)
+  }, 400)
 }
