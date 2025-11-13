@@ -20,8 +20,8 @@ body {
   /*text colors*/
   --text-color: #ebebeb;
   /* padding */
-  --padding-xs: 0.5rem;
-  --padding-sm: 1rem;
+  --padding-xs: 0.4rem;
+  --padding-sm: 0.8rem;
   --padding-md: 1.5rem;
   --padding-lg: 2rem;
   --padding-xl: 3rem;
@@ -76,12 +76,12 @@ main section .board {
   flex-grow: 1;
   border: 1px solid var(--border-color);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(36px, 1fr));
 }
 main section .board .block {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--block-color);
 }
 main section .board .fill {
@@ -89,8 +89,8 @@ main section .board .fill {
 }
 main section .board .food {
   background-color: var(--bg-food-color);
-  border-radius: 50%;
   animation: blink 0.8s infinite alternate;
+  border-radius: 50%;
 }
 @keyframes blink {
   from {
