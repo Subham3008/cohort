@@ -57,6 +57,12 @@ function handleSwipe() {
   }
 }
 
+// Prevent default scroll/refresh gestures
+document.addEventListener("touchmove", function (e) {
+  e.preventDefault();
+}, { passive: false });
+
+
 highScoreElement.innerText = highscore;
 
 const cols = Math.floor(board.clientWidth / blockWidth);
