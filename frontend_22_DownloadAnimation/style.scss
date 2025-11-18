@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  h1{
+    color: rgb(232, 232, 232);
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .card {
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p{
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .outer {
+      height: 20px;
+      width: 100%;
+      background-color: rgb(170, 170, 170);
+      border-radius: 10px;
+
+      .inner {
+        height: 20px;
+        width: 0%;
+        background-color: rgb(63, 252, 0);
+        border-radius: 10px;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        background-color: rgb(62, 149, 60);
+        border-radius: 15px;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:active {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
