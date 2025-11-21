@@ -29,8 +29,8 @@ const users = [
   }
 ];
 let sum = ''
-users.forEach(function (elem) {
-  sum += `<div class="card">
+users.forEach(function (elem, idx) {
+  sum += `<div id="${idx}" class="card">
       <img src="${elem.image}" alt="image">
       <h1>${elem.fullname}</h1>
       <h2>${elem.designation}</h2>
