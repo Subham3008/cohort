@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cfcfcf;
+}
+
+main {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+main .piano {
+  display: flex;
+  position: relative;
+  box-shadow: inset 0 -8px 5px rgba(0, 0, 0, 0.2);
+}
+main .piano .white {
+  width: 60px;
+  height: 220px;
+  background: #fff;
+  border: 1px solid #bbb;
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 10px;
+}
+main .piano .white:active {
+  background: #cccccc;
+  cursor: pointer;
+}
+main .piano .black {
+  width: 35px;
+  height: 140px;
+  background: linear-gradient(#000, #2a2a2a);
+  position: absolute;
+  top: 0;
+  border-radius: 0 0 5px 5px;
+  z-index: 2;
+}
+main .piano .black:active {
+  background: linear-gradient(#111, #444);
+  cursor: pointer;
+}
+main .piano .black.b1 {
+  left: 45px;
+}
+main .piano .black.b2 {
+  left: 105px;
+}
+main .piano .black.b4 {
+  left: 225px;
+}
+main .piano .black.b5 {
+  left: 285px;
+}
+main .piano .black.b6 {
+  left: 345px;
+}
+main .piano .black.b7 {
+  left: 465px;
+}
+main .piano .black.b8 {
+  left: 525px;
+}
+main .piano .black.b9 {
+  left: 645px;
+}
+main .piano .black.b10 {
+  left: 705px;
+}
+main .piano .black.b11 {
+  left: 765px;
+}
+main .piano .black.b12 {
+  left: 885px;
+}
+main .piano .black.b13 {
+  left: 945px;
+}
+main .piano .black.b14 {
+  left: 1065px;
+}
+main .piano .black.b15 {
+  left: 1125px;
+}
+main .piano .black.b16 {
+  left: 1185px;
+}/*# sourceMappingURL=style.css.map */
