@@ -27,9 +27,9 @@ let count = 0;
 
 storys.addEventListener("click", function (dets) {
   // console.log(users[dets.target.id]);
-
-  fullScreen.style.display = "block"
   fullScreen.style.backgroundImage = `url(${users[dets.target.id].story})`
+  fullScreen.style.display = "block"
+
 
   let int = setInterval(() => {
     count++
