@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right bottom, rgb(26, 26, 26), rgb(30, 30, 30), black);
+  padding: 10px;
+  // overflow: auto;
+
+  section {
+    height: 100%;
+    width: 380px;
+    background-color: black;
+    margin: auto;
+    border-radius: 10px;
+
+
+    .all-reel {
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      scroll-snap-type: y mandatory; //important for scroling
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .reel {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+        scroll-snap-align: start; //important for scroling
+        scroll-snap-stop: always; //important for scroling
+
+        video {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        .bottom {
+          width: 100%;
+          padding: 30px 20px;
+          position: absolute;
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.91));
+          bottom: 0;
+
+          .user {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+
+            button {
+              border: none;
+              border: 1px solid white;
+              background-color: transparent;
+              padding: 2px 5px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+          }
+
+          h3 {
+            font-weight: 500;
+            font-size: 20px;
+          }
+        }
+
+        .right {
+          position: absolute;
+          width: 40px;
+          right: 3%;
+          bottom: 14%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+          font-size: 20px;
+
+          .like .love {
+            color: red;
+          }
+
+          .icon {
+            font-size: 30px;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
