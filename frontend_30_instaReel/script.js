@@ -1,6 +1,6 @@
 const reelsData = [
   {
-    isMuted: false,
+    isMuted: true,
     username: "traveler_raj",
     likeCount: 1203,
     isLiked: false,
@@ -12,7 +12,7 @@ const reelsData = [
     isFollowed: true
   },
   {
-    isMuted: false,
+    isMuted: true,
     username: "foodieworld",
     likeCount: 8503,
     isLiked: true,
@@ -24,7 +24,7 @@ const reelsData = [
     isFollowed: false
   },
   {
-    isMuted: false,
+    isMuted: true,
     username: "code_with_sub",
     likeCount: 1566,
     isLiked: true,
@@ -36,7 +36,7 @@ const reelsData = [
     isFollowed: true
   },
   {
-    isMuted: false,
+    isMuted: true,
     username: "fit_life_hero",
     likeCount: 6023,
     isLiked: false,
@@ -48,7 +48,7 @@ const reelsData = [
     isFollowed: false
   },
   {
-    isMuted: false,
+    isMuted: true,
     username: "artistic_mind",
     likeCount: 1123,
     isLiked: true,
@@ -68,7 +68,10 @@ function renderReels() {
   let clutter = ''
   reelsData.forEach(function (elem, idx) {
     clutter += `<div class="reel">
-          <video autoplay loop muted src="${elem.video}"></video>
+          <video autoplay loop ${elem.isMuted ? 'muted' : ''} src="${elem.video}"></video>
+          <div class="mic" id="${idx}">${elem.isMuted ? '<i class="ri-volume-mute-line"></i>' : ' <i class="ri-volume-up-line"></i>'}
+     
+    </div>
           <div class="bottom">
             <div class="user">
               <img
@@ -125,6 +128,15 @@ allReel.addEventListener('click', function (dets) {
       reelsData[dets.target.id].isFollowed = true
     } else {
       reelsData[dets.target.id].isFollowed = false
+    }
+    renderReels()
+  }
+
+  if (dets.target.className == "mic") {
+    if (!reelsData[dets.target.id].isMuted) {
+      reelsData[dets.target.id].isMuted = true
+    } else {
+      reelsData[dets.target.id].isMuted = false
     }
     renderReels()
   }

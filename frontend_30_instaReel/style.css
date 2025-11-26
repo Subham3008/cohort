@@ -17,6 +17,24 @@ main {
   background: linear-gradient(to right bottom, rgb(26, 26, 26), rgb(30, 30, 30), black);
   padding: 10px;
 }
+main .mic {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  right: 0;
+}
+main .mic:active {
+  scale: 0.95;
+}
+main .mic i {
+  font-size: 25px;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.782);
+  border-radius: 50%;
+  padding: 3px;
+}
 main section {
   height: 100%;
   width: 380px;
