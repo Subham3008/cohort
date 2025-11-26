@@ -103,8 +103,22 @@ main {
           gap: 10px;
           font-size: 20px;
 
-          .like .love {
+          div{
+            width: 100%;
+
+            h4{
+              pointer-events: none;
+            }
+            h6{
+              pointer-events: none;
+            }
+          }
+
+          .like {
+            width: 100%;
+            .love {
             color: red;
+          }
           }
 
           .icon {

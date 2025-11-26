@@ -1,7 +1,8 @@
 const reelsData = [
   {
+    isMuted: false,
     username: "traveler_raj",
-    likeCount: "12k",
+    likeCount: 1203,
     isLiked: false,
     commentCount: 312,
     caption: "Lost in the mountains ⛰️ | Nature therapy 💚",
@@ -11,8 +12,9 @@ const reelsData = [
     isFollowed: true
   },
   {
+    isMuted: false,
     username: "foodieworld",
-    likeCount: "8k",
+    likeCount: 8503,
     isLiked: true,
     commentCount: 214,
     caption: "Cheese pull challenge 🤤🧀 #FoodLover",
@@ -22,8 +24,9 @@ const reelsData = [
     isFollowed: false
   },
   {
+    isMuted: false,
     username: "code_with_sub",
-    likeCount: "15k",
+    likeCount: 1566,
     isLiked: true,
     commentCount: 528,
     caption: "Late night coding + coffee ☕💻 #WebDev",
@@ -33,8 +36,9 @@ const reelsData = [
     isFollowed: true
   },
   {
+    isMuted: false,
     username: "fit_life_hero",
-    likeCount: "6k",
+    likeCount: 6023,
     isLiked: false,
     commentCount: 181,
     caption: "Push harder than yesterday 🏋️‍♂️🔥",
@@ -44,8 +48,9 @@ const reelsData = [
     isFollowed: false
   },
   {
+    isMuted: false,
     username: "artistic_mind",
-    likeCount: "11k",
+    likeCount: 1123,
     isLiked: true,
     commentCount: 402,
     caption: "Turning imagination into art 🎨✨",
@@ -58,9 +63,11 @@ const reelsData = [
 
 let allReel = document.querySelector(".all-reel")
 
-let clutter = ''
-reelsData.forEach(function (elem) {
-  clutter += `<div class="reel">
+function renderReels() {
+
+  let clutter = ''
+  reelsData.forEach(function (elem, idx) {
+    clutter += `<div class="reel">
           <video autoplay loop muted src="${elem.video}"></video>
           <div class="bottom">
             <div class="user">
@@ -68,12 +75,12 @@ reelsData.forEach(function (elem) {
                 src="https://images.unsplash.com/photo-1562572159-4efc207f5aff?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="">
               <h4>${elem.username}</h4>
-              <button>${elem.isFollowed ? 'Unfollow' : 'follow'}</button>
+              <button id="${idx}" class="follow">${elem.isFollowed ? 'Unfollow' : 'follow'}</button>
             </div>
             <h3>${elem.caption}</h3>
           </div>
           <div class="right">
-            <div class="like">
+            <div id="${idx}"  class="like">
               <h4 class="like-icon icon">${elem.isLiked ? '<i class="love ri-heart-3-fill"></i>' : '<i class="ri-heart-3-line"></i>'}</h4>
               <h6>${elem.likeCount}</h6>
             </div>
@@ -91,6 +98,38 @@ reelsData.forEach(function (elem) {
 
           </div>
         </div>`
-})
+  })
 
-allReel.innerHTML = clutter
+  allReel.innerHTML = clutter
+}
+
+renderReels()
+
+allReel.addEventListener('click', function (dets) {
+
+  // console.log(dets.target.className);
+
+  if (dets.target.className == "like") {
+    if (!reelsData[dets.target.id].isLiked) {
+      reelsData[dets.target.id].likeCount++
+      reelsData[dets.target.id].isLiked = true
+    } else {
+      reelsData[dets.target.id].likeCount--
+      reelsData[dets.target.id].isLiked = false
+    }
+    renderReels()
+  }
+
+  if (dets.target.className == "follow") {
+    if (!reelsData[dets.target.id].isFollowed) {
+      reelsData[dets.target.id].isFollowed = true
+    } else {
+      reelsData[dets.target.id].isFollowed = false
+    }
+    renderReels()
+  }
+
+
+
+
+})

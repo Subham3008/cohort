@@ -94,6 +94,18 @@ main section .all-reel .reel .right {
   gap: 10px;
   font-size: 20px;
 }
+main section .all-reel .reel .right div {
+  width: 100%;
+}
+main section .all-reel .reel .right div h4 {
+  pointer-events: none;
+}
+main section .all-reel .reel .right div h6 {
+  pointer-events: none;
+}
+main section .all-reel .reel .right .like {
+  width: 100%;
+}
 main section .all-reel .reel .right .like .love {
   color: red;
 }
