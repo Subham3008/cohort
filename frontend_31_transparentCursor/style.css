@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --x: 400px;
+  --y: 400px;
+}
+
+body {
+  background-image: url(https://images.pexels.com/photos/31004904/pexels-photo-31004904.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(150px at var(--x) var(--y), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.945));
+}/*# sourceMappingURL=style.css.map */
