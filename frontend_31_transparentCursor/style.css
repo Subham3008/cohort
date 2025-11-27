@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 :root {
@@ -17,13 +17,25 @@ body {
 }
 
 body {
-  background-image: url(https://images.pexels.com/photos/31004904/pexels-photo-31004904.jpeg);
-  background-position: center;
-  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
 .box {
   height: 100%;
   width: 100%;
-  background: radial-gradient(150px at var(--x) var(--y), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.945));
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  background: radial-gradient(140px at var(--x) var(--y), rgba(255, 255, 255, 0), rgb(0, 0, 0));
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }/*# sourceMappingURL=style.css.map */
