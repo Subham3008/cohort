@@ -8,7 +8,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 :root {
@@ -20,9 +19,6 @@ body {
   height: 100vh;
   width: 100vw;
   position: relative;
-  // border: 5px solid red;
-  // background: black;
-
 }
 
 .box {
@@ -42,8 +38,4 @@ video {
   width: 100%;
   object-fit: cover;
   display: block;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // z-index: 1;
 }
