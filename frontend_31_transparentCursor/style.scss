@@ -29,7 +29,7 @@ body {
   top: 0;
   left: 0;
   background: radial-gradient(140px at var(--x) var(--y),
-      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 50%,
       rgb(0, 0, 0));
 }
 
