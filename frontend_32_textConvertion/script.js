@@ -1,4 +1,4 @@
-let p = document.querySelector("p")
+let p = document.querySelector("h3")
 let charecter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 let text = p.innerText
 
