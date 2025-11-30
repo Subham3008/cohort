@@ -45,13 +45,14 @@ body {
   max-width: 300px;
   border-radius: 15px;
   text-align: center;
-  padding: 10px;
+  padding-inline: 10px;
   box-shadow: 0 0 60px rgb(255, 0, 123);
   background: linear-gradient(rgb(0, 0, 0), black) padding-box,
-    conic-gradient(from var(--rotation), black, rgb(255, 0, 123), black) border-box;
+    conic-gradient(from var(--rotation), black, rgb(255, 0, 123), black)
+      border-box;
   border: 5px solid rgba(255, 255, 255, 0);
-  animation: borderAnimate 5s linear infinite;
-  /* animation-iteration-count: infinite; */
+  animation: borderAnimate 8s;
+  animation-iteration-count: infinite;
 }
 
 .box img {
