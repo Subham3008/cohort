@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(27, 27, 27);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+}
+
+.box:hover {
+  transform: scale(1.2) !important;
+}
+body:has(.box:hover) .box {
+  transform: scale(0.8);
+}
+
+.red {
+  background-color: rgb(190, 21, 21);
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
