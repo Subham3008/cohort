@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  padding: 20px;
+}
+
+.gallery {
+  column-count: 4;
+  /* number of columns */
+  column-gap: 15px;
+  /* space between columns */
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    column-count: 1;
+  }
+}
