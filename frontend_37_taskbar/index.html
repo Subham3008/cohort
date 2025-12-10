@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini Windows-like Taskbar (Demo)</title>
+<style>
+  :root{
+    --taskbar-height:56px;
+    --accent:#0b84ff;
+    --bg:#0f1720;
+    --panel:#0b1220cc;
+    --glass: rgba(255,255,255,0.04);
+  }
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: Inter, system-ui, sans-serif;
+    background: linear-gradient(180deg,#0b1020 0%, #081019 100%);
+    color:#e6eef8;
+  }
+
+  /* Simple app windows area */
+  #desktop{
+    padding-bottom: var(--taskbar-height);
+    min-height:100vh;
+    box-sizing:border-box;
+  }
+
+  /* Window (simple) */
+  .app-window{
+    position:absolute;
+    width:480px;
+    height:300px;
+    background:#0f1727;
+    border-radius:8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .titlebar{
+    height:36px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:0 8px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    user-select:none;
+  }
+  .titlebar .title {flex:1; font-size:14px}
+  .titlebar .controls button{
+    background:transparent;
+    border:0;
+    color:#cfe7ff;
+    width:34px;height:28px;border-radius:4px;
+    cursor:pointer;
+  }
+  .content {flex:1;padding:12px;font-size:14px;color:#c9d6e9;}
+
+  /* Taskbar */
+  .taskbar{
+    position:fixed;
+    left:0;right:0;
+    bottom:0;
+    height:var(--taskbar-height);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:6px 10px;
+    box-sizing:border-box;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+    backdrop-filter: blur(6px);
+    border-top:1px solid rgba(255,255,255,0.03);
+  }
+  .taskbar-left, .taskbar-center, .taskbar-right{
+    display:flex; align-items:center; gap:8px;
+  }
+
+  /* Start button */
+  .start-btn{
+    display:flex; align-items:center; gap:8px;
+    padding:6px 10px; border-radius:8px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .start-btn:hover{ background:var(--glass); }
+
+  .start-menu{
+    position:fixed;
+    left:10px;
+    bottom:calc(var(--taskbar-height) + 8px);
+    width:260px;
+    background: var(--panel);
+    border-radius:10px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+    padding:10px;
+    display:none;
+  }
+
+  /* app icons */
+  .app-icon{
+    width:44px;height:44px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    user-select:none;
+  }
+  .app-icon:hover{ background:var(--glass); }
+
+  /* task buttons (running apps) */
+  .task-btn{
+    min-width:120px; height:40px; padding:6px 8px;
+    display:flex; align-items:center; gap:8px;
+    border-radius:6px;
+    cursor:pointer; user-select:none;
+  }
+  .task-btn.active{
+    background:linear-gradient(180deg, rgba(11,132,255,0.12), rgba(11,132,255,0.06));
+    border:1px solid rgba(11,132,255,0.18);
+  }
+
+  /* system tray */
+  .tray{
+    display:flex; align-items:center; gap:8px;
+  }
+  .clock{
+    padding:4px 8px; border-radius:6px;
+    font-weight:600; user-select:none;
+  }
+
+  /* small responsive */
+  @media (max-width:600px){
+    .task-btn{ display:none; }
+    .taskbar-center{ flex:1; justify-content:center; }
+  }
+
+</style>
+</head>
+<body>
+<div id="desktop" onclick="closeStartMenu()">
+  <!-- initial content -->
+</div>
+
+<!-- Start menu -->
+<div id="startMenu" class="start-menu" role="menu" aria-hidden="true">
+  <div style="font-weight:700;margin-bottom:8px">Start</div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <button class="menu-item" onclick="openApp('File Explorer')">📁 File Explorer</button>
+    <button class="menu-item" onclick="openApp('Settings')">⚙️ Settings</button>
+    <button class="menu-item" onclick="openApp('Notepad')">📝 Notepad</button>
+  </div>
+</div>
+
+<!-- Taskbar -->
+<div class="taskbar" role="toolbar" aria-label="Taskbar">
+  <div class="taskbar-left">
+    <div class="start-btn" onclick="toggleStartMenu()" title="Start">
+      <strong style="font-size:16px">▦</strong><span style="font-weight:600">Start</span>
+    </div>
+    <!-- pinned app icons -->
+    <div class="app-icon" onclick="openApp('File Explorer')" title="File Explorer">📁</div>
+    <div class="app-icon" onclick="openApp('Notepad')" title="Notepad">📝</div>
+    <div class="app-icon" onclick="openApp('Browser')" title="Browser">🌐</div>
+  </div>
+
+  <div class="taskbar-center" id="taskCenter" aria-live="polite">
+    <!-- running app tasks will be injected here -->
+  </div>
+
+  <div class="taskbar-right">
+    <div class="tray" role="status">
+      <div class="clock" id="clock">--:--</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Small taskbar/window manager demo
+  const desktop = document.getElementById('desktop');
+  const taskCenter = document.getElementById('taskCenter');
+  const startMenu = document.getElementById('startMenu');
+
+  let zIndexCounter = 50;
+  const runningApps = {}; // id -> {windowEl, taskBtn}
+
+  function toggleStartMenu(e){
+    const shown = startMenu.style.display === 'block';
+    startMenu.style.display = shown ? 'none' : 'block';
+    startMenu.setAttribute('aria-hidden', shown ? 'true' : 'false');
+    if (!shown) startMenu.focus();
+    e && e.stopPropagation();
+  }
+  function closeStartMenu(){
+    startMenu.style.display = 'none';
+    startMenu.setAttribute('aria-hidden','true');
+  }
+
+  function openApp(appName){
+    // If already running, bring to front / toggle minimize
+    if (runningApps[appName]){
+      const app = runningApps[appName];
+      const win = app.windowEl;
+      const taskBtn = app.taskBtn;
+      if (win.style.display === 'none'){
+        win.style.display = 'flex';
+        taskBtn.classList.add('active');
+        bringToFront(win);
+      } else {
+        // minimize
+        win.style.display = 'none';
+        taskBtn.classList.remove('active');
+      }
+      closeStartMenu();
+      return;
+    }
+
+    // create window element
+    const win = document.createElement('div');
+    win.className = 'app-window';
+    win.style.left = Math.max(10, 60 + Object.keys(runningApps).length * 30) + 'px';
+    win.style.top = Math.max(40, 40 + Object.keys(runningApps).length * 20) + 'px';
+    win.style.zIndex = ++zIndexCounter;
+
+    win.innerHTML = `
+      <div class="titlebar" onmousedown="bringToFront(this.parentElement)">
+        <div class="title">${appName}</div>
+        <div class="controls">
+          <button title="Minimize" onclick="minimizeApp(event,'${escapeId(appName)}')">_</button>
+          <button title="Close" onclick="closeApp(event,'${escapeId(appName)}')">✕</button>
+        </div>
+      </div>
+      <div class="content">
+        <h3>${appName}</h3>
+        <p>This is a demo window for <strong>${appName}</strong>. You can minimize or close it using the taskbar.</p>
+      </div>
+    `;
+    // simple focus handler
+    win.addEventListener('mousedown', () => bringToFront(win));
+    desktop.appendChild(win);
+
+    // create task button
+    const taskBtn = document.createElement('div');
+    taskBtn.className = 'task-btn active';
+    taskBtn.innerHTML = `<div style="font-weight:700">${iconFor(appName)}</div><div style="flex:1;text-align:left;padding-left:8px">${appName}</div>`;
+    taskBtn.onclick = () => openApp(appName);
+    taskCenter.appendChild(taskBtn);
+
+    runningApps[appName] = { windowEl: win, taskBtn };
+    closeStartMenu();
+  }
+
+  function minimizeApp(e, idEscaped){
+    e.stopPropagation();
+    const id = unescapeId(idEscaped);
+    const app = runningApps[id];
+    if (!app) return;
+    app.windowEl.style.display = 'none';
+    app.taskBtn.classList.remove('active');
+  }
+  function closeApp(e, idEscaped){
+    e.stopPropagation();
+    const id = unescapeId(idEscaped);
+    const app = runningApps[id];
+    if (!app) return;
+    app.windowEl.remove();
+    app.taskBtn.remove();
+    delete runningApps[id];
+  }
+
+  function bringToFront(el){
+    // if passed titlebar element, get parent
+    if (el && el.tagName === 'DIV' && el.classList.contains('titlebar')) el = el.parentElement;
+    if (!el) return;
+    zIndexCounter++;
+    el.style.zIndex = zIndexCounter;
+    // mark active in taskbar
+    for (const k in runningApps){
+      const app = runningApps[k];
+      if (app.windowEl === el) app.taskBtn.classList.add('active');
+      else app.taskBtn.classList.remove('active');
+    }
+  }
+
+  function iconFor(name){
+    if (name.includes('File')) return '📁';
+    if (name.includes('Note')) return '📝';
+    if (name.includes('Browser')) return '🌐';
+    return '🪟';
+  }
+
+  // small helpers to handle IDs in inline onclicks
+  function escapeId(s){ return encodeURIComponent(s); }
+  function unescapeId(s){ return decodeURIComponent(s); }
+
+  // Clock
+  function updateClock(){
+    const el = document.getElementById('clock');
+    const now = new Date();
+    const hh = String(now.getHours()).padStart(2,'0');
+    const mm = String(now.getMinutes()).padStart(2,'0');
+    el.textContent = `${hh}:${mm}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Accessibility: keyboard toggle for start (Windows key imitation)
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Meta' || e.key === 'ContextMenu' || (e.key === 'Escape')) {
+      if (e.key === 'Escape') closeStartMenu();
+      return;
+    }
+    if (e.key.toLowerCase() === 'w' && e.altKey){
+      toggleStartMenu();
+      e.preventDefault();
+    }
+  });
+
+  // clicking desktop closes start menu
+  document.getElementById('desktop').addEventListener('click', closeStartMenu);
+
+</script>
+</body>
+</html>
