@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+
+  .monitor {
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(22, 21, 21, 0.555);
+
+    .right-click {
+      overflow: hidden;
+      position: absolute;
+      height: auto;
+      width: 250px;
+      background-color: rgb(224, 224, 224);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      display: none;
+      flex-direction: column;
+      z-index: 15;
+      font-size: 1rem;
+      opacity: 0.9;
+
+      .option {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+
+    .main-screen {
+      overflow: hidden;
+      position: relative;
+      height: 90%;
+      width: 100%;
+      background-image: url(https://i.pinimg.com/1200x/b0/ff/76/b0ff762fcff7935d8f164dbb04d5f204.jpg);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      // color: #333;
+
+      .windows {
+        height: 80%;
+        width: 60%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 2px solid #ccc;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        z-index: 5;
+        bottom: -100%;
+        transition: all 0.3s linear;
+
+
+        .bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 3rem;
+          width: 100%;
+          padding-inline: 2rem;
+          background-color: rgba(0, 0, 0, 0.203);
+
+          i {
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px 6px;
+            font-size: 1rem;
+          }
+
+          .user {
+            display: flex;
+            gap: 0.7rem;
+
+          }
+        }
+      }
+
+      .vs-code {
+        height: 80%;
+        width: 60%;
+        background-color: rgba(40, 204, 254, 0.8);
+        border: 2px solid #ccc;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        position: absolute;
+        z-index: 5;
+        bottom: -100%;
+        transition: all 0.3s linear;
+
+
+        .top {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 25px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.203);
+
+          i {
+            color: white;
+
+            &:hover {
+              background-color: red;
+            }
+          }
+        }
+      }
+
+      .camera {
+        height: 80%;
+        width: 60%;
+        background-color: rgba(178, 137, 137, 0.8);
+        border: 2px solid #ccc;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        position: absolute;
+        z-index: 5;
+        bottom: -100%;
+        transition: all 0.3s linear;
+
+
+        .top {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 25px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.203);
+
+          i {
+            color: white;
+
+            &:hover {
+              background-color: red;
+            }
+          }
+        }
+      }
+
+      .file {
+        height: 80%;
+        width: 60%;
+        background-color: rgba(251, 247, 26, 0.8);
+        border: 2px solid #ccc;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        position: absolute;
+        z-index: 5;
+        bottom: -100%;
+        transition: all 0.3s linear;
+
+        .top {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 25px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.203);
+
+          i {
+            color: white;
+
+            &:hover {
+              background-color: red;
+            }
+          }
+        }
+      }
+    }
+
+    .taskbar {
+      z-index: 10;
+      height: 10%;
+      width: 100%;
+      background-color: #5b5b5b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+
+      img {
+        height: 40px;
+        width: 40px;
+        margin: 0 10px;
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        width: 180px;
+        background-color: white;
+        padding: 4px 5px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .search-input {
+          padding: 4px 1px;
+          font-size: 16px;
+          border: 2px solid #cccccc00;
+          border-radius: 5px;
+          outline: none;
+          transition: 0.3s;
+        }
+
+      }
+    }
+  }
+}
