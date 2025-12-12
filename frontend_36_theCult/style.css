@@ -29,13 +29,13 @@ main {
 }
 main .sec-1 {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(9, 6, 27, 0.578);
 }
 main .sec-1 video {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
@@ -146,4 +146,13 @@ main .sec-1 .content .content-text button::before {
 }
 main .sec-1 .content .content-text button:hover::before {
   background: linear-gradient(to right, rgb(255, 34, 34), rgb(240, 193, 38), rgb(255, 230, 0));
+}
+main .sec-2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #191024;
+}
+main .sec-2 img {
+  height: 100%;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

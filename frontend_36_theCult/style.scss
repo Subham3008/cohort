@@ -32,13 +32,13 @@ main {
 
   .sec-1 {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(9, 6, 27, 0.578);
 
     video {
-      position: fixed;
+      position: absolute;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       object-fit: cover;
       z-index: -1;
 
@@ -170,6 +170,17 @@ main {
         }
 
       }
+    }
+  }
+
+  .sec-2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #191024;
+
+    img {
+      height: 100%;
+      width: 100%;
     }
   }
 }
