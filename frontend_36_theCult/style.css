@@ -38,6 +38,8 @@ main .sec-1 video {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   z-index: -1;
 }
 main .sec-1 nav {
