@@ -9,3 +9,29 @@ body {
   height: 100%;
   width: 100%;
 }
+
+#parent {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px;
+
+  #box {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+  }
+
+  #circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+  }
+}
