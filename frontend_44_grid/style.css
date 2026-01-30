@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "helvetica neue";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(209, 210, 195);
+  padding: 2rem;
+}
+
+section {
+  background-color: rgb(255, 255, 255);
+  border: 0.5rem solid black;
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  padding: 0 1rem;
+  gap: 1rem;
+  grid-template-columns: 50% 1fr 1fr;
+  grid-template-rows: 100px 1.8fr 1fr 1fr;
+  grid-template-areas:
+    "nav nav nav"
+    "top1 top2 top3"
+    "left center center"
+    "left right1 right2";
+}
+
+nav {
+  grid-area: nav;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 2px 0;
+}
+
+.nav h3 {
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
+
+#nav1 {
+  width: 14%;
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+#nav1 i {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 0.8rem;
+}
+
+#nav2 {
+  width: 76%;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  /* gap: 2rem; */
+}
+
+#nav2 .mid {
+  border: 1px solid black;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0;
+  justify-content: space-between;
+  /* padding-left: 1rem; */
+  padding-right: 0.3rem;
+}
+
+#nav2 .mid button {
+  padding: 0.7rem 0.8rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+#nav2 #mid1 {
+  width: 20%;
+}
+#nav2 #mid2 {
+  width: 30%;
+}
+
+#nav3 {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 1.6rem;
+}
+
+#nav3 i {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 0.8rem;
+}
+
+#nav3 {
+  width: 10%;
+}
+
+.top1 {
+  grid-area: top1;
+  background-color: rgb(0, 255, 140);
+}
+.top2 {
+  grid-area: top2;
+  background-color: rgb(0, 85, 255);
+}
+.top3 {
+  grid-area: top3;
+  background-color: rgb(217, 255, 0);
+}
+.left {
+  grid-area: left;
+  background-color: blanchedalmond;
+}
+.center {
+  grid-area: center;
+  background-color: beige;
+}
+
+.right1 {
+  grid-area: right1;
+  background-color: coral;
+}
+
+.right2 {
+  grid-area: right2;
+  background-color: rgb(173, 107, 83);
+}
