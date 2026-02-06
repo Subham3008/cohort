@@ -52,7 +52,7 @@ img {
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 4px;
-  cursor: default;
+  cursor: pointer;
   transition: all 0.3s ease;
   border: none;
   font-family: "Montserrat", sans-serif;
@@ -85,7 +85,7 @@ img {
 }
 
 .btn-primary:hover::before {
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .btn-outline {
@@ -113,7 +113,7 @@ img {
 }
 
 .btn-outline:hover::before {
-  width: 0%;
+  width: 100%;
 }
 
 .section-title {
