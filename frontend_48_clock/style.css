@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "helvetica neue";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-image: url(./assets/avengers-doomsday-logo-reveal-ho4k22ggffspbjrt.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#clock-container {
+  width: 50%;
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  position: relative;
+}
+#clock-container img {
+  width: 100%;
+  filter: invert(1);
+}
+
+.hands {
+  position: absolute;
+  /* background-color: blue; */
+  height: 1.5%;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  /* transform: translateY(-50%) rotate(0deg); */
+  /* z-index: 5; */
+}
+
+#hHand {
+  background-color: rgb(207, 20, 20);
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  transform-origin: left;
+  z-index: 5;
+}
+#mHand {
+  background-color: rgb(214, 194, 66);
+  height: 100%;
+  width: 85%;
+  position: absolute;
+  transform-origin: left;
+  z-index: 4;
+}
+
+#sHand {
+  background-color: blue;
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  position: absolute;
+}
+
+.digital-clock {
+  font-size: 2.5rem;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
