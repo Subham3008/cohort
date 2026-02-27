@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <nav>
+      <img id="logo" src="./assets/logoBlinkit.svg" alt="logo">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search product...">
+      </div>
+      <button id="createBtn">Create product</button>
+    </nav>
+    <div class="product-section">
+      <!-- <div class="product">
+        <img
+          src="https://media.istockphoto.com/id/173541478/photo/numerous-baskets-of-apples.jpg?s=612x612&w=0&k=20&c=QNGIvEaoE_voj6djgRhavL4ZblGKwnCKXGVt8S0BGB4="
+          alt="">
+        <div class="product-des">
+          <h1>Apple</h1>
+          <p>Fresh and juicy red apples.</p>
+          <h3>fruits</h3>
+          <div class="price">
+            <h5>price: 120</h5>
+            <h5>stock: 50</h5>
+          </div>
+          <div class="btn">
+            <button id="updateBtn">Update</button>
+            <button id="removeBtn">Remove</button>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class="productForm-container">
+      <form id="productForm">
+        <input name="name" class="productInput" type="text" placeholder="Product Name" />
+        <input name="image" class="productInput" type="text" placeholder="Product Image Url" />
+        <textarea name="description" class="productInput" placeholder="Product Description..."></textarea>
+        <select name="category" class="productInput">
+          <option value="">Select Category</option>
+          <option value="fruits">Fruits & Vegetables</option>
+          <option value="dairy">Dairy Products</option>
+          <option value="beverages">Beverages</option>
+          <option value="snacks">Snacks</option>
+          <option value="household">Household Items</option>
+        </select>
+        <input name="price" class="productInput" type="number" placeholder="Price" />
+        <input name="stock" class="productInput" type="number" placeholder="Stock Quantity" />
+        <button id="submitBtn" type="submit">Add Product</button>
+      </form>
+
+      <i id="close" class="ri-close-large-fill"></i>
+    </div>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
