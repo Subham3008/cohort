@@ -26,6 +26,8 @@ main {
   width: 100%;
   position: relative;
   overflow-x: hidden;
+  background-color: rgb(52, 50, 50);
+  /* background-color: rgb(22, 21, 21); */
 }
 
 main nav {
@@ -76,14 +78,14 @@ main nav {
   transform: scale(0.95);
 }
 .productForm-container {
-  width: 350px;
+  width: 30%;
   display: flex;
   background-color: rgb(29, 27, 27);
   gap: 1rem;
   padding: 0.5rem;
   position: absolute;
-  top: 12%;
-  left: 102%;
+  top: -100%;
+  left: 35%;
   /* box-shadow: 0 3px 10px rgba(39, 42, 45, 0.397); */
   box-shadow: 0 0 10px rgb(62, 238, 241);
   transition: 0.3s ease;
@@ -98,13 +100,12 @@ main nav {
   color: white;
 }
 
-
 #productForm {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   /* background-color: antiquewhite; */
 }
 #productForm .productInput {
@@ -141,13 +142,10 @@ main nav {
 
 .product-section {
   width: 100%;
-  height: fit-content;
   display: flex;
   flex-wrap: wrap;
-  background: #323232;
   padding: 1rem;
   gap: 0.7rem;
-  justify-content: center;
 }
 
 .product {
@@ -157,13 +155,20 @@ main nav {
   gap: 0.5rem;
   display: flex;
   height: fit-content;
-  width: 400px
+  width: 363px;
 }
 
-.product img {
-  height: 200px;
-  width: 200px;
+.product .img {
+  height: 220px;
+  width: 150px;
   border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.img> img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product-des {
@@ -174,7 +179,7 @@ main nav {
   gap: 0.3rem;
 }
 
-.price{
+.price {
   display: flex;
   gap: 1rem;
 }
@@ -192,7 +197,7 @@ main nav {
   border-radius: 0.5rem;
   transition: all ease 0.2s;
 }
-.btn button:active{
+.btn button:active {
   transform: scale(0.95);
 }
 
