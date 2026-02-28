@@ -172,6 +172,6 @@ function removeFromCart(id) {
 
   cartsArr = cartResult
   renderCartsUi()
-  console.log(cartResult);
+  // console.log(cartResult);
 
 }
