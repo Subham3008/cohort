@@ -36,10 +36,16 @@ function addTransaction(e) {
 
     const category = $('#category').value;
 
+    let amt = Number(amount.value);
+
+    if (type === 'expense') {
+        amt = -amt;
+    }
+
     const transaction = {
         id: Math.floor(Math.random() * 100000000),
         text: text.value,
-        amount: amount.value,
+        amount: amt,
         type: type,
         category: category,
         date: new Date().toLocaleDateString()
@@ -54,7 +60,7 @@ function addTransaction(e) {
 }
 
 function removeTransaction(id) {
-    transactions = transactions.filter(t => t.id !== id);
+    transactions = transactions.filter(t => t.id !== Number(id));
     updateLocalStorage();
     init();
 }
@@ -65,19 +71,22 @@ function updateLocalStorage() {
 
 // Calculate Totals
 function updateValues() {
-    const balanceText = balance.innerText;
-    let currentBal = parseFloat(balanceText);
+    // const balanceText = balance.innerText;
+    // let currentBal = parseFloat(balanceText);
 
     let total = 0;
     let inc = 0;
     let exp = 0;
 
-    for (let i = 0; i < transactions.length; i++) {
-        const amt = parseFloat(transactions[i].amount);
-        total += amt;
-        if (amt > 0) inc += amt;
-        else exp += amt;
-    }
+    transactions.forEach(t => {
+        total += t.amount;
+
+        if (t.amount > 0) {
+            inc += t.amount;
+        } else {
+            exp += t.amount;
+        }
+    });
 
     balance.innerText = `$${total.toFixed(2)}`;
     income.innerText = `$${inc.toFixed(2)}`;

@@ -121,7 +121,7 @@ header {
   transition: all ease 0.2s;
 }
 
-.filter-btn:active {
+.filter-btn.active {
   border-bottom: 1px solid white;
 }
 
