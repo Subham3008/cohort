@@ -10,15 +10,18 @@
 
 <body>
   <main>
-    <div class="health-card">
-      <p>Your BMI Value</p>
-      <h2 id="bmi-value">0.00</h2>
-      <h2 id="health-category">Health Category</h2>
-    </div>
-    <div class="bmi-claculator">
-      <input type="number" id="height" placeholder="Enter your height (cm)">
-      <input type="number" id="weight" placeholder="Enter your weight (kg)">
-      <button onclick="calculateBMI()">Calculate BMI</button>
+    <div class="bmi-container">
+      <div class="health-card">
+        <p>YOUR BMI VALUE</p>
+        <h2 id="bmi-value">0.00</h2>
+        <h2 id="health-category">Health Category</h2>
+      </div>
+      <div class="bmi-claculator">
+        <input type="number" id="height" placeholder="Enter your height (cm)" required>
+        <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <button onclick="resetBMI()">Clear</button>
+      </div>
     </div>
   </main>
   <script src="script.js"></script>
