@@ -102,7 +102,7 @@ closeBtn.addEventListener('click', function () {
 
 function renderHistory() {
   let result = ""
-  history.forEach((e) => {
+  history.forEach((e, idx) => {
     result += `<div class="bmi">
           <h3>${e.username}</h3>
           <p>Height: <span>${e.height}</span>(cm)</p>
@@ -110,7 +110,7 @@ function renderHistory() {
           <p>Your BMI Value: <span>${e.bmiValue}</span></p>
           <p>Health Category: <span>${e.health}</span></p>
           <p>Date: <span>${e.date}</span></p>
-          <button class="btns deleteBtn">Delete</button>
+          <button class="btns deleteBtn" onClick="deleteBmiHistory('${idx}')">Delete</button>
         </div>`
   })
 
@@ -118,3 +118,15 @@ function renderHistory() {
 }
 
 renderHistory()
+
+
+//delete BMI history
+
+function deleteBmiHistory(idx) {
+  history.splice(idx, 1)
+
+  localStorage.setItem("bmiHistoryList", JSON.stringify(history))
+
+  renderHistory()
+
+}
