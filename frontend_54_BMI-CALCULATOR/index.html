@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -13,6 +14,7 @@
     <div class="bmi-container">
       <div class="bmi-claculator">
         <h2>BMI CALCULATOR</h2>
+        <input type="text" id="name" placeholder="Enter your name" required>
         <input type="number" id="height" placeholder="Enter your height (cm)" required>
         <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
         <button class="btns calculateBtn" onclick="calculateBMI()">Calculate BMI</button>
@@ -21,7 +23,25 @@
       <div class="health-card">
         <h2>RESULT</h2>
         <p>YOUR BMI VALUE: <span id="bmi-value">0.00</span></p>
-        <p>Health Category: <span id="health-category">Category</span></p>
+        <p>HEALTH CATEGORY: <span id="health-category">Category</span></p>
+      </div>
+      <button class="btns historyBtn">YOUR BMI HISTORY</button>
+    </div>
+    <div class="bmiHistory">
+      <div class="bmi-nav">
+        <h2>PREVIOUS RESULT</h2>
+        <i id="closeBtn" class="ri-close-large-fill"></i>
+      </div>
+      <div class="bmis">
+        <!-- <div class="bmi">
+          <h3>Subham Samanta</h3>
+          <p>Height: <span>0.00</span>(cm)</p>
+          <p>Weight: <span>000</span>(kg)</p>
+          <p>Your BMI Value: <span>0.00</span></p>
+          <p>Health Category: <span>Category</span></p>
+          <p>Date: <span>00/00/0000</span></p>
+          <button class="btns deleteBtn">Delete</button>
+        </div> -->
       </div>
     </div>
   </main>
