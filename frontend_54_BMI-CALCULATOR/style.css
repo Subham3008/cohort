@@ -115,6 +115,7 @@ main {
   width: 320px;
   background-color: rgb(37, 35, 35);
   padding-inline: 1rem;
+  padding-bottom: 0.5rem;
   border-radius: 0.3rem;
   overflow-y: auto;
   display: flex;
