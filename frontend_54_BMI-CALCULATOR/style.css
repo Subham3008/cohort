@@ -43,6 +43,7 @@ main {
   border-radius: 0.3rem;
   min-height: 400px;
   width: 300px;
+  border: 1px solid rgb(148, 146, 146);
 }
 
 .bmi-claculator {
@@ -120,6 +121,7 @@ main {
   flex-direction: column;
   gap: 0.7rem;
   display: none;
+  border: 1px solid rgb(148, 146, 146);
 }
 
 .bmi-nav {
@@ -153,9 +155,10 @@ main {
   background-color: rgb(68, 63, 63);
   border-radius: 0.4em;
   padding: 0.5rem;
+  border: 1px solid rgb(172, 166, 166);
 }
 
-.deleteBtn{
+.deleteBtn {
   background-color: rgb(185, 39, 39);
   color: white;
 }
