@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.word-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*--word nav--*/
+.word-nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  padding-top: 1rem;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 2rem;
+  background-color: rgb(102, 102, 215);
+}
+
+.word-nav > p.active {
+  background-color: white;
+  color: rgb(92, 92, 206);
+}
+
+.word-nav > p {
+  cursor: pointer;
+  padding-inline: 0.2rem;
+  padding-top: 0.3rem;
+  color: white;
+  font-weight: 500;
+}
+
+.word-nav > p:not(.active):hover {
+  background-color: rgba(0, 0, 0, 0.244);
+}
+
+/*--toolbar--*/
+.toolbar-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  display: none;
+}
+
+.toolbar button {
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  /* background-color: transparent; */
+  font-size: large;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  transition: all ease 0.2s;
+}
+
+.toolbar button:active {
+  transform: scale(0.95);
+}
+
+.toolbar button:hover {
+  background-color: rgba(0, 0, 0, 0.149);
+}
+
+[data-tab="home"] {
+  display: block;
+}
+
+
+.word-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: rgb(229, 223, 223);
+}
+
+#page {
+  width: 70%;
+  height: 95%;
+  background-color: white;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div class="word-container">
+      <div class="word-nav">
+        <p id="home" class="active">Home</p>
+        <p id="draw">Draw</p>
+        <p id="design">Design</p>
+        <p id="layout">Layout</p>
+      </div>
+      <div class="toolbar-items">
+        <div class="toolbar" data-tab="home">
+          <button id="bold">B</button>
+          <button id="italic">I</button>
+          <button id="underline">U</button>
+          <button id="fontIncrease">F+</button>
+          <button id="fontDecrease">F-</button>
+        </div>
+        <div class="toolbar" data-tab="draw">
+          <button>Eraser</button>
+          <button>pen1</button>
+          <button>pen2</button>
+          <button>pen3</button>
+        </div>
+        <div class="toolbar" data-tab="design">
+          <button>Page Borders</button>
+          <button>Page Color</button>
+        </div>
+        <div class="toolbar" data-tab="layout">
+          <button>Margins</button>
+          <button>Size</button>
+          <button>Orientation</button>
+        </div>
+      </div>
+      <div class="word-pages">
+        <div id="page" contenteditable="true">
+          <!-- Start writing here... -->
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
