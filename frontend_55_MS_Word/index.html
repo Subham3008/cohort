@@ -38,13 +38,27 @@
         </div>
         <div class="toolbar" data-tab="layout">
           <button>Margins</button>
-          <button>Size</button>
-          <button>Orientation</button>
+          <!-- <button>Orientation</button> -->
+          <select id="orientation">
+            <option value="" selected disabled>Orientation</option>
+            <option value="portrait">Portrait</option>
+            <option value="landscape">Landscape</option>
+          </select>
+          <select id="pageSize">
+            <option value="" selected disabled>Page Size</option>
+            <option value="a3">A3</option>
+            <option value="a4">A4</option>
+            <option value="a5">A5</option>
+            <option value="letter">Letter</option>
+            <option value="legal">Legal</option>
+          </select>
         </div>
       </div>
       <div class="word-pages">
-        <div id="page" contenteditable="true">
-          <!-- Start writing here... -->
+        <div id="page" class="page">
+          <div class="page-border" contenteditable="true">
+            Start writing here...
+          </div>
         </div>
       </div>
     </div>
@@ -55,6 +69,7 @@
       <i id="colorClose" class="ri-close-large-fill"></i>
     </div>
     <div class="allColor">
+      <button class="color" data-color="white">Normal</button>
       <button class="color" data-color="red"></button>
       <button class="color" data-color="green"></button>
       <button class="color" data-color="lightgreen"></button>
@@ -69,10 +84,35 @@
       <button class="color" data-color="pink"></button>
       <button class="color" data-color="darkred"></button>
       <button class="color" data-color="violet"></button>
-
-
     </div>
   </div>
+  <div class="border-panel">
+    <div class="borderPanel-nav">
+      <h3>SELECT BORDER STYLE</h3>
+      <i id="borderClose" class="ri-close-large-fill"></i>
+    </div>
+    <div>
+      <label>Border Style</label>
+      <select id="borderStyle">
+        <option value="solid">Solid</option>
+        <option value="dashed">Dashed</option>
+        <option value="dotted">Dotted</option>
+        <option value="double">Double</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Border Width</label>
+      <input type="range" id="borderWidth" min="1" max="10" value="2">
+    </div>
+
+    <div>
+      <label>Border Color</label>
+      <input type="color" id="borderColor">
+    </div>
+
+  </div>
+
   <script src="script.js"></script>
 </body>
 

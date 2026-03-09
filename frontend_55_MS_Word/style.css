@@ -100,6 +100,31 @@ main {
   background-color: rgba(0, 0, 0, 0.149);
 }
 
+#pageSize {
+  border: none;
+  background-color: rgb(235, 233, 233);
+  /* font-size: large; */
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+}
+
+#pageSize:hover {
+  background-color: rgba(0, 0, 0, 0.149);
+}
+
+#orientation {
+  border: none;
+  background-color: rgb(235, 233, 233);
+  /* font-size: large; */
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+}
+#orientation:hover {
+  background-color: rgba(0, 0, 0, 0.149);
+}
+
 [data-tab="home"] {
   display: block;
 }
@@ -114,14 +139,29 @@ main {
   background-color: rgb(229, 223, 223);
 }
 
-#page {
-  width: 70%;
-  height: 100dvh;
+.page {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  
   background-color: white;
+  outline: none; */
+
+  width: 800px;
+  height: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.page-border {
+  width: 90%;
+  height: 93%;
+  padding: 20px;
   outline: none;
-  padding: 2rem;
-  /* caret-color: red; */
-  /* border: 1px solid black; */
 }
 
 /*---design---*/
@@ -148,20 +188,71 @@ main {
   justify-content: space-between;
 }
 
-.colorNav > i {
+i {
   cursor: pointer;
 }
 
-.allColor{
+.allColor {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.allColor>button{
+.allColor > button {
   border: none;
   height: 50px;
   width: 65px;
   cursor: pointer;
   /* padding: 0.2rem; */
+}
+
+.border-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: -100%;
+  left: 64.5%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  gap: 0.5rem;
+  transition: all ease 0.3s;
+  border-radius: 0.2rem;
+}
+
+/*--border design--*/
+.borderPanel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*--Layout--*/
+/* Page Sizes */
+
+.a3 {
+  width: 1123px;
+  height: 1587px;
+}
+
+.a4 {
+  width: 794px;
+  height: 1123px;
+}
+
+.a5 {
+  width: 559px;
+  height: 794px;
+}
+
+.letter {
+  width: 816px;
+  height: 1056px;
+}
+
+.legal {
+  width: 816px;
+  height: 1344px;
 }
