@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,8 +33,8 @@
           <button>pen3</button>
         </div>
         <div class="toolbar" data-tab="design">
-          <button>Page Borders</button>
-          <button>Page Color</button>
+          <button id="pageBorders">Page Borders</button>
+          <button id="pageColor">Page Color</button>
         </div>
         <div class="toolbar" data-tab="layout">
           <button>Margins</button>
@@ -48,6 +49,30 @@
       </div>
     </div>
   </main>
+  <div class="pageColor">
+    <div class="colorNav">
+      <h3>SELECT PAGE COLOR</h3>
+      <i id="colorClose" class="ri-close-large-fill"></i>
+    </div>
+    <div class="allColor">
+      <button class="color" data-color="red"></button>
+      <button class="color" data-color="green"></button>
+      <button class="color" data-color="lightgreen"></button>
+      <button class="color" data-color="blue"></button>
+      <button class="color" data-color="lightblue"></button>
+      <button class="color" data-color="darkblue"></button>
+      <button class="color" data-color="yellow"></button>
+      <button class="color" data-color="lightyellow"></button>
+      <button class="color" data-color="purple"></button>
+      <button class="color" data-color="gray"></button>
+      <button class="color" data-color="orange"></button>
+      <button class="color" data-color="pink"></button>
+      <button class="color" data-color="darkred"></button>
+      <button class="color" data-color="violet"></button>
+
+
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 
