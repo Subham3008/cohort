@@ -67,7 +67,7 @@ function applyFormat(style, value) {
   span.appendChild(range.extractContents());
   range.insertNode(span);
 
-  // 🔥 selection restore
+  // selection restore
   selection.removeAllRanges();
   const newRange = document.createRange();
   newRange.selectNodeContents(span);
@@ -84,6 +84,39 @@ italic.addEventListener("click", () => {
 
 underline.addEventListener("click", () => {
   applyFormat("textDecoration", "underline");
+});
+
+/*--font increase decrease-- */
+function changeFontSize(step) {
+
+  const selection = window.getSelection();
+  const range = getSelectionRange();
+  if (!range) return;
+
+  const parent = selection.anchorNode.parentElement;
+
+  let size = 16;
+
+  if (parent.style.fontSize) {
+    size = parseInt(parent.style.fontSize);
+  }
+
+  size = size + step;
+
+  const span = document.createElement("span");
+  span.style.fontSize = size + "px";
+
+  span.appendChild(range.extractContents());
+  range.insertNode(span);
+
+}
+
+fontIncrease.addEventListener("click", () => {
+  changeFontSize(2);
+});
+
+fontDecrease.addEventListener("click", () => {
+  changeFontSize(-2);
 });
 
 
@@ -210,7 +243,7 @@ orientationValue.addEventListener("change", function () {
 
 })
 
-{/*--draw section---*/}
+{/*--draw section---*/ }
 
 const drawLayer = document.querySelector("#drawLayer")
 
@@ -220,10 +253,10 @@ let strokeSize = 3
 let path
 
 
-drawLayer.addEventListener("mousedown", function(e){
+drawLayer.addEventListener("mousedown", function (e) {
   drawing = true
 
-  path = document.createElementNS("http://www.w3.org/2000/svg","path")
+  path = document.createElementNS("http://www.w3.org/2000/svg", "path")
 
   path.setAttribute("stroke", color)
   path.setAttribute("stroke-width", strokeSize)
@@ -234,36 +267,36 @@ drawLayer.addEventListener("mousedown", function(e){
   drawLayer.appendChild(path)
 })
 
-drawLayer.addEventListener("mousemove", function(e){
+drawLayer.addEventListener("mousemove", function (e) {
 
-  if(!drawing) return
+  if (!drawing) return
 
   let d = path.getAttribute("d")
   path.setAttribute("d", d + ` L ${e.offsetX} ${e.offsetY}`)
 })
 
-drawLayer.addEventListener("mouseup", function(){
+drawLayer.addEventListener("mouseup", function () {
   drawing = false
 })
 
 
-document.querySelector(".fa-pen").onclick = function(){
+document.querySelector(".fa-pen").onclick = function () {
   color = "black"
   strokeSize = 3
   drawLayer.style.pointerEvents = "auto"
 }
 
-document.querySelector(".fa-pencil").onclick = function(){
+document.querySelector(".fa-pencil").onclick = function () {
   color = "black"
   strokeSize = 1
   drawLayer.style.pointerEvents = "auto"
 }
 
-document.querySelector('[style="color:red;"]').onclick = function(){
+document.querySelector('[style="color:red;"]').onclick = function () {
   color = "red"
 }
 
-document.querySelector("#eraser").onclick = function(){
+document.querySelector("#eraser").onclick = function () {
   drawLayer.innerHTML = ""
 }
 
