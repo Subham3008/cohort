@@ -182,22 +182,88 @@ pageSize.addEventListener('change', function () {
   }
 })
 
+{/*--layout--*/ }
+{/*--orientation--*/ }
 const orientationValue = document.querySelector("#orientation")
+
+let originalHeight = ""
+let originalWidth = ""
 
 orientationValue.addEventListener("change", function () {
 
   const styles = window.getComputedStyle(page);
-  let width = styles.width;
-  let height = styles.height;
+
+  if (!originalWidth) {
+    originalHeight = styles.height;
+    originalWidth = styles.width;
+  }
 
   if (this.value === "landscape") {
-    page.style.width = height
-    page.style.height = width
+    page.style.width = originalHeight
+    page.style.height = originalWidth
   }
 
   if (this.value === "portrait") {
-    page.style.width = width
-    page.style.height = height
+    page.style.width = originalWidth;
+    page.style.height = originalHeight;
   }
 
 })
+
+{/*--draw section---*/}
+
+const drawLayer = document.querySelector("#drawLayer")
+
+let drawing = false
+let color = "black"
+let strokeSize = 3
+let path
+
+
+drawLayer.addEventListener("mousedown", function(e){
+  drawing = true
+
+  path = document.createElementNS("http://www.w3.org/2000/svg","path")
+
+  path.setAttribute("stroke", color)
+  path.setAttribute("stroke-width", strokeSize)
+  path.setAttribute("fill", "none")
+
+  path.setAttribute("d", `M ${e.offsetX} ${e.offsetY}`)
+
+  drawLayer.appendChild(path)
+})
+
+drawLayer.addEventListener("mousemove", function(e){
+
+  if(!drawing) return
+
+  let d = path.getAttribute("d")
+  path.setAttribute("d", d + ` L ${e.offsetX} ${e.offsetY}`)
+})
+
+drawLayer.addEventListener("mouseup", function(){
+  drawing = false
+})
+
+
+document.querySelector(".fa-pen").onclick = function(){
+  color = "black"
+  strokeSize = 3
+  drawLayer.style.pointerEvents = "auto"
+}
+
+document.querySelector(".fa-pencil").onclick = function(){
+  color = "black"
+  strokeSize = 1
+  drawLayer.style.pointerEvents = "auto"
+}
+
+document.querySelector('[style="color:red;"]').onclick = function(){
+  color = "red"
+}
+
+document.querySelector("#eraser").onclick = function(){
+  drawLayer.innerHTML = ""
+}
+

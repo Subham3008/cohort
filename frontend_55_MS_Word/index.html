@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,18 +29,20 @@
           <button id="fontDecrease">F-</button>
         </div>
         <div class="toolbar" data-tab="draw">
-          <button>Eraser</button>
-          <button>pen1</button>
-          <button>pen2</button>
-          <button>pen3</button>
+          <button id="eraser"><i class="fa-solid fa-eraser"></i></button>
+          <button><i class="fa-solid fa-pen"></i></button>
+          <button><i class="fa-solid fa-pencil"></i></button>
+          <button><i class="fa-solid fa-pen" style="color:red;"></i></button>
+          <button><i class="fa-solid fa-pen" style="color:green;"></i></button>
+          <button><i class="fa-solid fa-pen" style="color:blue;"></i></button>
+          <button><i class="fa-solid fa-paintbrush"></i></button>
         </div>
         <div class="toolbar" data-tab="design">
           <button id="pageBorders">Page Borders</button>
           <button id="pageColor">Page Color</button>
         </div>
         <div class="toolbar" data-tab="layout">
-          <button>Margins</button>
-          <!-- <button>Orientation</button> -->
+          <!-- <button>Margins</button> -->
           <select id="orientation">
             <option value="" selected disabled>Orientation</option>
             <option value="portrait">Portrait</option>
@@ -59,6 +63,7 @@
           <div class="page-border" contenteditable="true">
             Start writing here...
           </div>
+          <svg id="drawLayer"></svg>
         </div>
       </div>
     </div>

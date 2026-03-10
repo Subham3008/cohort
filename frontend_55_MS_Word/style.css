@@ -86,8 +86,8 @@ main {
   cursor: pointer;
   border-radius: 0.2rem;
   /* background-color: transparent; */
-  font-size: large;
-  font-weight: 500;
+  /* font-size: large; */
+  font-weight: 600;
   padding: 0.2rem 0.5rem;
   transition: all ease 0.2s;
 }
@@ -140,13 +140,6 @@ main {
 }
 
 .page {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  background-color: white;
-  outline: none; */
-
   width: 800px;
   height: 1200px;
   display: flex;
@@ -155,6 +148,7 @@ main {
   margin: 20px auto;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .page-border {
@@ -162,6 +156,15 @@ main {
   height: 93%;
   padding: 20px;
   outline: none;
+}
+
+#drawLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /*---design---*/
