@@ -1,0 +1,245 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background: linear-gradient(100deg, #003B1F, #00FF66, #F9FF00);
+     min-height:100vh;
+    
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.navbar{
+    width:100%;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    position:static;
+    top:0;
+    left:0;
+    z-index:1000;
+    transition: opacity 0.4s ease;
+}
+
+.logo a{
+    text-decoration:none;
+    font-size:35px;
+    font-weight:bold;
+    color:#c2cdc6;
+    letter-spacing:2px;
+    transition:0.3s;
+}
+
+.logo a:hover{
+    text-shadow:0 0 15px #00ff66;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:rgb(28, 27, 27);
+    font-size:25px;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#161817;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#68da1b;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+.ri-menu-line{
+    font-size:30px;
+    cursor:pointer;
+    color: #161817;
+}
+
+.one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.one h1{
+    font-size: 27vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+}
+#sprite{
+    position: absolute;
+    width: 20%;
+    z-index: 5;
+    top: 20%;
+    left: 40%;
+}
+
+#lemon-cut{
+    width: 20%;
+    top: 10%;
+    left: 32%;
+   position: absolute; 
+   z-index: 1;
+
+}
+#fresh-lemon{
+    width: 27%;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 20%;
+   
+}
+ #leaf{
+    top: 17%;
+    left: 2%;
+    position: absolute;
+    transform: rotate(60deg);
+    width: 17%;
+    
+ }
+ #leaf2{
+    top: 65%;
+    left: 83%;
+    transform: rotate(-90deg);
+    position: absolute;
+    width: 12%;
+    
+ }
+ #leaf3{
+    width: 20%;
+   position: absolute;
+   top: 5%;
+  right: 0%;
+ }
+.two{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+   background: linear-gradient(90deg, #021E12, #003B1F);
+
+
+}
+.left-side, .right-side{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5vh;
+   width: 50%; 
+   height: 100%;
+}
+.left-side svg{
+    width: 120%;
+    margin-top:40vh;
+  transform: rotateX(50deg);
+}
+.right-side h1{
+    color: #fff;
+    font-size: 5vw;
+    line-height: 3.9rem;
+}
+.right-side p{
+    font-size: 1vw;
+    color: #fff;
+    width: 70%;
+}
+.three{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #003B1F, #00FF66);
+
+}
+.card{
+     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 25vw;
+    height: 70vh;
+    gap: 2vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    background-color: #F9FF00;
+}
+
+.card h1{
+    margin-top: 40vh;
+    font-size: 3vw;
+}
+.card button{
+    font-size: 1.5vw;
+    border-radius: 50px;
+    border: none;
+    background-color: #d69a0e;
+    color: #fff;
+    padding: 1vw 2vw;
+}
+.card:nth-child(1){
+    background: linear-gradient(135deg,#FF7A00,#FFB347);
+}
+
+.card:nth-child(3){
+    background: linear-gradient(135deg,#C40000,#FF1A1A);
+}
+
+#fanta{
+    top: -8%;
+    left: -12%;
+    width: 130%;
+    position: absolute;
+    
+}
+
+#coca-cola{
+    top: -8%;
+    left: 25%;
+    width: 52%;
+    position: absolute;
+}
+#orange{
+    width: 85%;
+    position: absolute;
+    left: 10%;
+    top: -25%;
+}
+#splash{
+    width: 100%;
+    position: absolute;
+    top: -35%;
+}
